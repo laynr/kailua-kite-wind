@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kailua Kite Wind</title>
+    <meta
+      name="description"
+      content="Hour-by-hour 7-day wind forecast for Kailua Beach Park with kite-surf filters."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow bg-glow-a" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-b" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Kailua Beach Park • Oahu</p>
+        <h1>Kite Wind Window Finder</h1>
+        <p class="subhead">
+          7-day, hour-by-hour wind forecast tuned for kite surfers. Highlighting your best sessions.
+        </p>
+      </header>
+
+      <section class="controls card" aria-label="Wind filters">
+        <div class="control-group split">
+          <label for="min-speed">Min wind (kn)</label>
+          <input id="min-speed" type="number" min="0" max="60" step="1" value="14" />
+          <label for="max-speed">Max wind (kn)</label>
+          <input id="max-speed" type="number" min="0" max="70" step="1" value="28" />
+        </div>
+
+        <div class="control-group">
+          <p class="group-title">Preferred direction(s)</p>
+          <div id="direction-options" class="direction-grid" role="group" aria-label="Directions"></div>
+        </div>
+
+        <div class="control-actions">
+          <button id="apply-filters" class="btn btn-primary" type="button">Apply Filters</button>
+          <button id="reset-filters" class="btn btn-ghost" type="button">Reset / Show All</button>
+        </div>
+      </section>
+
+      <section class="summary card" id="summary" aria-live="polite"></section>
+
+      <section class="forecast" id="forecast" aria-live="polite"></section>
+    </main>
+
+    <template id="hour-template">
+      <article class="hour-row">
+        <div class="hour-time"></div>
+        <div class="hour-main">
+          <span class="speed"></span>
+          <span class="dir"></span>
+        </div>
+        <div class="hour-tag"></div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
