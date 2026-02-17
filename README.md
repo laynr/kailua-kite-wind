@@ -2,6 +2,10 @@
 
 Static GitHub Pages app for kite surfers showing 7-day, hour-by-hour wind forecast (speed + direction) for Kailua Beach Park.
 
+## Live site
+
+https://laynr.github.io/kailua-kite-wind/
+
 ## Data source
 
 Uses Open-Meteo forecast API (CORS enabled):
@@ -25,14 +29,12 @@ Open `index.html` directly, or serve with a simple static server.
 
 ## GitHub Pages publishing
 
-This repo includes `.github/workflows/pages.yml` to deploy automatically on push to `main`.
+This site is published from the `main` branch root (`/`) in GitHub Pages.
 
 Steps:
 
-1. Create a new GitHub repo (for example: `kailua-kite-wind`).
-2. Push this folder contents to the repo default branch (`main`).
-3. In GitHub: `Settings -> Pages`, ensure source is **GitHub Actions**.
-4. Push future updates; deployment runs automatically.
+1. Push changes to `main`.
+2. In GitHub: `Settings -> Pages`, ensure source is **Deploy from a branch** with `main` and `/ (root)`.
 
 ## Notes
 
